@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<title>My Account</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>window.$ = window.jQuery = require('./jquery-2.1.4.js');</script>
+<style>
+html,body,h1,h2,h3,h4,h5,form,label {font-family: "Raleway", sans-serif; font-weight:bold;}
+.vertical-menu {
+    width: 800px;
+    height: 1000px;
+    overflow-y: auto;
+}
+::-webkit-input-placeholder {
+   color: black;
+   font-weight: bold;
+}
+</style>
+
+<body class="w3-light-grey">
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+  <button class="w3-bar-item w3-button  w3-hover-none w3-hover-text-white" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+  
+<span class="w3-bar-item w3-right" style="text-color:rgba(0,255,255,0)">GST Billing Software</span>
+</div>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+<div class="vertical-menu">
+  <div class="w3-container w3-row">
+    <div class="w3-col s4">
+      <img src="C:\Gst_Billing\images\client.png" class="w3-circle w3-margin-right" style="width:46px">
+	  <h4 align="left">Admin <strong>Account</strong></h4><br>
+    </div>
+  </div>
+  <hr>
+  <div class="w3-container">
+    <h5>Dashboard</h5>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
+    <a href="admin.html" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-bars fa-fw"></i>  Overview</a>
+    
+
+	<a href="add_product.html" class="w3-bar-item w3-button "><i class="fa fa-product-hunt fa-fw"></i>Product<span class="fa arrow"></span></a>
+	</div>
+</div>
+  </nav>
+
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+
+  <!-- Header -->
+  <header class="w3-container" style="padding-top:22px">
+    <h5><b><i class="fa fa-dashboard"></i> My Dashboard</b></h5>
+  </header>
+
+  <div class="w3-row-padding w3-margin-bottom">
+    <div class="w3-quarter">
+      <div class="w3-container w3-red w3-padding-16">
+        <div class="w3-left"><i class="fa fa-credit-card w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3></h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Bill</h4>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-blue w3-padding-16">
+        <div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3></h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Maintain</h4>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-teal w3-padding-16">
+        <div class="w3-left"><i class="fa fa-shopping-cart w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3></h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Purchases</h4>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-orange w3-text-white w3-padding-16">
+        <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3></h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Sales</h4>
+      </div>
+    </div>
+  </div>
+
+
+ <div id="page-wrapper">
+<div class="container">
+  <h2>New Product/Services</h2><hr>
+  <form class="form-horizontal" id="newUser" >
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="id">id</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="id" placeholder="Enter id" name="id">
+      </div>
+    </div>
+	<div class="form-group">
+      <label class="control-label col-sm-2" for="product_name">product_name</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="product_name" placeholder="Enter product_name" name="product_name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="unit_price">unit_price</label>
+      <div class="col-sm-7">          
+        <input type="text" class="form-control" id="unit_price" placeholder="Enter unit_price" name="unit_price">
+      </div>
+    </div>
+	<div class="form-group">
+      <label class="control-label col-sm-2" for="qty">qty</label>
+      <div class="col-sm-7">          
+        <input type="text" class="form-control" id="qty" placeholder="Enter qty" name="qty">
+      </div>
+    </div>
+	<div class="form-group">
+      <label class="control-label col-sm-2" for="uom">uom</label>
+      <div class="col-sm-7">          
+        <input type="text" class="form-control" id="uom" placeholder="Enter uom" name="uom">
+      </div>
+    </div>
+	<div class="form-group">
+      <label class="control-label col-sm-2" for="tax">tax</label>
+      <div class="col-sm-7">          
+        <input type="text" class="form-control" id="tax" placeholder="Enter tax" name="tax">
+      </div>
+    </div>
+	<div class="form-group">
+      <label class="control-label col-sm-2" for="description">description</label>
+      <div class="col-sm-7">          
+        <input type="text" class="form-control" id="description" placeholder="Enter description" name="description">
+      </div>
+    </div>
+	<div class="form-group">
+      <label class="control-label col-sm-2" for="type">type</label>
+      <div class="col-sm-7">          
+        <input type="text" class="form-control" id="type" placeholder="Enter type" name="type">
+      </div>
+    </div>
+	<div class="form-group">
+      <label class="control-label col-sm-2" for="shn_sac">shn_sac</label>
+      <div class="col-sm-7">          
+        <input type="text" class="form-control" id="shn_sac" placeholder="Enter shn_sac" name="shn_sac">
+      </div>
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </form>
+  </div>
+</div>
+<hr>
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-16 w3-light-grey">
+    <h4><img src="C:\Gst_Billing\images\logo.png"   style="width:50px; margin:10px; "><strong>Zumosun International Research And Consultancy Pvt Ltd.</strong></h4>
+    <p>Powered by <a href="http://zumosun.com/" target="_blank">Zumosun Group</a></p>
+  </footer>
+
+  <!-- End page content -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+
+        //Gather the data
+        const form = document.querySelector('form');
+        form.addEventListener('submit', submitForm);
+        function submitForm(e) {
+
+            e.preventDefault();
+            const id = document.querySelector('#id').value;
+            const product_name = document.querySelector('#product_name').value;
+			const unit_price = document.querySelector('#unit_price').value;
+			const qty = document.querySelector('#qty').value;
+			const uom = document.querySelector('#uom').value;
+			const tax = document.querySelector('#tax').value;
+			const description = document.querySelector('#description').value;
+			const type = document.querySelector('#type').value;
+			const shn_sac = document.querySelector('#shn_sac').value;
+            //console.log(firstName, lastName);
+
+            //Attempt to send to Server MSSQL
+            //Database Details not secure but eh, internal app
+           var mysql = require('mysql');
+
+            // Add the credentials to access your database
+            var connection = mysql.createConnection({
+                host     : 'localhost',
+                user     : 'root',
+                password : null,
+                database : 'gst.mysql'
+            });
+
+
+            // connect to mysql
+            connection.connect(function(err) {
+                // in case of error
+                if(err){
+                    console.log(err.code);
+                    console.log(err.fatal);
+                }
+            });
+
+            var addConn = (async function () {
+                   
+  $query= 'Insert into product (id, product_name, unit_price, qty, uom, tax, description, type, shn_sac) values (' + "'" + id + "'" + ',' + "'" + product_name + "'" + ',' + "'" + unit_price + "'" + ',' + "'" + qty + "'" + ',' + "'" + uom + "'" + ',' + "'" + tax + "'" + ',' + "'" + description + "'" + ',' + "'" + type + "'" + ',' + "'" + shn_sac + "'" +')';
+                    //.query('insert into dbo.nirvana (FirstName, LastName, AmountDuePrevious, AmountDueCurrent) values ('+lastName+' , '+firstName+' , 0, 0);');
+  connection.query($query, function(err, fields) {
+                if(err){
+                    console.log("An error ocurred performing the query.");
+                    console.log(err);
+                    return;
+                }
+
+              console.log("Query succesfully executed");
+            });                  
+                 
+            });
+
+ addConn();
+        
+connection.end(function(){
+                // The connection has been closed
+            });
+			}
+</script>
+
+</body>
+</html>

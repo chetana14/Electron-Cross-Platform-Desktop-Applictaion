@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html>
+<title>My Account</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css"/>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>window.$ = window.jQuery = require('./jquery-2.1.4.js');</script>
+
+
+<style>
+html,body,h1,h2,h3,h4,h5,form,label {font-family: "Raleway", sans-serif; font-weight:bold; }
+.vertical-menu {
+    width: 800px;
+    height: 1000px;
+    overflow-y: auto;
+}
+::-webkit-input-placeholder {
+   color: black;
+   font-weight: bold;
+}
+.invoice-title h2, .invoice-title h3 {
+    display: inline-block;
+}
+
+.table > tbody > tr > .no-line {
+    border-top: none;
+}
+
+.table > thead > tr > .no-line {
+    border-bottom: none;
+}
+
+.table > tbody > tr > .thick-line {
+    border-top: 2px solid;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400);
+
+.font-roboto {
+  font-family: 'roboto condensed';
+}
+
+* {
+  box-sizing: border-box;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.modal-dialog {
+  position: fixed;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.modal-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 2px solid #3c7dcf;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.modal-header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 50px;
+  padding: 10px;
+  background: #6598d9;
+  border: 0;
+}
+
+.modal-title {
+  font-weight: 300;
+  font-size: 2em;
+  color: #fff;
+  line-height: 30px;
+}
+
+.modal-body {
+  position: absolute;
+  top: 50px;
+  bottom: 60px;
+  width: 100%;
+  font-weight: 300;
+  overflow: auto;
+}
+
+.modal-footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 60px;
+  padding: 10px;
+  background: #f1f3f5;
+}
+.btn-modal {
+  position: absolute;
+  top: 50%;
+
+  margin-top: 40px;
+  margin-left: -100px;
+ height:30px;
+  width: 700px;
+
+}
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 10px;
+  background: #f1f3f5;
+  border-left: 1px solid darken(#f1f3f5, 10%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: darken(#f1f3f5, 20%);
+}
+</style>
+<body class="w3-light-grey">
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+  <button class="w3-bar-item w3-button  w3-hover-none w3-hover-text-white" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+
+<span class="w3-bar-item w3-right" style="text-color:rgba(0,255,255,0)">GST Billing Software</span>
+</div>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+<div class="vertical-menu">
+  <div class="w3-container w3-row">
+    <div class="w3-col s4">
+      <img src="C:\Gst_Billing\images\client.png" class="w3-circle w3-margin-right" style="width:46px">
+	  <h4 align="left">Welcome, <strong>Mike</strong></h4><br>
+    </div>
+  </div>
+  <hr>
+  <div class="w3-container">
+    <h5>Dashboard</h5>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
+    <a href="index.html" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-bars fa-fw"></i>  Overview</a>
+    <a href="overview.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>Invoice</a>
+
+	<a href="product.html" class="w3-bar-item w3-button "><i class="fa fa-product-hunt fa-fw"></i>Product<span class="fa arrow"></span></a>
+	<ul class="nav nav-second-level">
+	
+                                    <li>
+                                        <a href="view_product.html">View</a>
+                                    </li>
+	</ul>
+
+	<a href="client.html" class="w3-bar-item w3-button "><i class="fa fa-users fa-fw"></i>Client<span class="fa arrow"></span></a>
+	<ul class="nav nav-second-level">
+	<li>
+                                        <a href="add_client.html">Add New</a>
+                                    </li>
+                                    <li>
+                                        <a href="view_client.html">View</a>
+                                    </li>
+	</ul>
+    <a href="bill.html" class="w3-bar-item w3-button "><i class="fa fa-credit-card fa-fw"></i> Bill<span class="fa arrow"></span></a>
+	<ul class="nav nav-second-level">
+	<li>
+                                        <a href="client_bill.html">Client Bill</a>
+                                    </li>
+                                    <li>
+                                        <a href="supplier_bill.html">Supplier Bill</a>
+                                    </li>
+	</ul>
+    <a href="stock.html" class="w3-bar-item w3-button "><i class="fa fa-archive fa-fw"></i>Stock Management</a>
+    <a href="print.html" class="w3-bar-item w3-button "><i class="fa fa-print fa-fw"></i>Print</a>
+<a href="settings.html" class="w3-bar-item w3-button "><i class="fa fa-cog fa-fw"></i>Settings</a>
+  </div>
+</div>
+  </nav>
+
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px;margin-top:43px; overflow-x: scroll;">
+
+  <!-- Header -->
+  <header class="w3-container" style="padding-top:22px">
+    <h5><b><i class="fa fa-dashboard"></i> My Dashboard</b></h5>
+  </header>
+
+  <div class="w3-row-padding w3-margin-bottom">
+    <div class="w3-quarter">
+      <div class="w3-container w3-red w3-padding-16">
+        <div class="w3-left"><i class="fa fa-credit-card w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3><span id="myText"></span></h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Bill</h4>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-blue w3-padding-16">
+        <div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3><span id="Text"></span></h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Maintain</h4>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-teal w3-padding-16">
+        <div class="w3-left"><i class="fa fa-shopping-cart w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3><span id="my"></span></h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Purchases</h4>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-orange w3-text-white w3-padding-16">
+        <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3><span id="myt"></span></h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Sales</h4>
+      </div>
+    </div>
+  </div>
+
+  <div id="page-wrapper">
+<div class="container">
+  <h2>Create New Invoice</h2><hr>
+  <form class="form-horizontal" id="newUser" style="font-family:"Raleway", sans-serif; font-weight:bold;" >
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="client_name">Client Name</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="client_name" placeholder="Enter client_name" name="client_name">
+      </div>
+    </div>
+	<div class="form-group">
+      <label class="control-label col-sm-2" for="invoice_type">Invoice Type</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="invoice_type" placeholder="Enter invoice_type" name="invoice_type">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="invoice_number">Invoice Number</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="invoice_number" placeholder="Enter invoice_number" name="invoice_number">
+      </div>
+    </div>
+	<div class="form-group">
+      <label class="control-label col-sm-2" for="product">Product</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="product" placeholder="Enter product" name="product">
+      </div>
+    </div>
+	<div class="form-group">
+      <label class="control-label col-sm-2" for="description">Description</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="description" placeholder="Enter description" name="description">
+      </div>
+    </div>
+	<div class="form-group">
+      <label class="control-label col-sm-2" for="quantity">Quantity</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="quantity" placeholder="Enter quantity" name="quantity">
+      </div>
+    </div>
+	<div class="form-group">
+      <label class="control-label col-sm-2" for="uom">Uom</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="uom" placeholder="Enter uom" name="uom">
+      </div>
+    </div>
+	<div class="form-group">
+      <label class="control-label col-sm-2" for="tax">Tax</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="tax" placeholder="Enter tax" name="tax">
+      </div>
+    </div>
+	<div class="form-group">
+      <label class="control-label col-sm-2" for="po_no">Po no</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="po_no" placeholder="Enter po_no" name="po_no">
+      </div>
+    </div>
+	<div class="form-group">
+      <label class="control-label col-sm-2" for="po_date">Po date</label>
+      <div class="col-sm-7">
+        <strong><input type="text" class="form-control" id="po_date" placeholder="yyyy-mm-dd" name="po_date"></strong>
+      </div>
+    </div>
+	<div class="form-group">
+      <label class="control-label col-sm-2" for="issue_date">Issue Date</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="issue_date" placeholder="yyyy-mm-dd" name="issue_date">
+	  </div>
+    </div>
+	<div class="form-group">
+      <label class="control-label col-sm-2" for="due_date">Due Date</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="due_date" placeholder="yyyy-mm-dd" name="due_date">
+      </div>
+    </div>
+	<div class="form-group">
+      <label class="control-label col-sm-2" for="payment_terms">Payment Terms</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="payment_terms" placeholder="Enter payment_terms" name="payment_terms">
+      </div>
+    </div>
+	<div class="form-group">
+      <label class="control-label col-sm-2" for="discount">Discount</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="discount" placeholder="Enter discount" name="discount">
+      </div>
+    </div>
+	<div class="form-group">
+      <label class="control-label col-sm-2" for="total">Total</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="total" placeholder="Enter total" name="total">
+      </div>
+    </div>
+	<div class="form-group">
+      <label class="control-label col-sm-2" for="amount_recieved">Amount Recieved</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="amount_recieved" placeholder="Enter amount_recieved" name="amount_recieved">
+      </div>
+    </div>
+	<div class="form-group">
+      <label class="control-label col-sm-2" for="amount_paid">Amount Paid</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="amount_paid" placeholder="Enter amount_paid" name="amount_paid">
+      </div>
+    </div>
+	<div class="form-group">
+      <label class="control-label col-sm-2" for="payment_type">Payment Type</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="payment_type" placeholder="Enter payment_type" name="payment_type">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </form>
+  </div>
+</div>
+ <hr>
+
+
+  <div class="container">
+  <h2>Manage Invoice</h2>
+
+<form class="form-inline">
+   <div class="form-group" style="margin-bottom:0px; margin-top:8px; margin-left:0px;">
+	<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+	</div>
+	<!--<div class="form-group" style="margin-bottom:0px; margin-top:8px; margin-left:0px; padding:0px;">
+	<input type="file" id="fileUploadCSV" class="btn btn-primary"/>
+    </div>
+	<div class="form-group" style="margin-bottom:5px; margin-left:0px; ">
+	<input type="button" value="Upload csv" id="btnUpload" class="btn btn-primary" />
+	</div>-->
+	<div class="form-group" style="margin-bottom:5px; margin-left:0px;">
+     <input type="button" id="action-btn" value="Retrieve database" type="button" class="btn btn-primary" />
+    </div>
+	<div class="form-group" style="margin-bottom:5px; margin-left:0px;">
+	<button onclick="exportTableToCSV('members.csv')" type="button" class="btn btn-primary">Export csv</button>
+	</div>
+   <div class="form-group" style="margin-bottom:5px; margin-left:0px;">
+   <button onclick="myfunction()" type="button" class="btn btn-primary">Print this page</button>
+    </div>
+	</form>
+<br>
+
+
+
+
+  <table class="table table-hover"id="table">
+    <thead>
+      <tr>
+        <th>client_name </th>
+        <th>invoice_type </th>
+        <th>invoice_number </th>
+		<th>product</th>
+		<th>description </th>
+		<th>quantity</th>
+		<th>uom</th>
+		<th>tax </th>
+		<th>po_no</th>
+		<th>po_date </th>
+		<th>issue_date</th>
+		<th>due_date</th>
+		<th>payment_terms</th>
+		<th>discount </th>
+		<th>total</th>
+		<th>amount_recieved</th>
+		<th>amount_paid</th>
+		<th>payment_type</th>
+		<th>Select</th>
+      </tr>
+    </thead>
+    <tbody id="tbodyLeads">
+      <tr>
+
+        <td></td>
+        <td></td>
+        <td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<input type="button" id="btnGetCount" value="Count Rows" onclick = "CountRows()" />
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-16 w3-light-grey">
+    <h4><img src="C:\Gst_Billing\images\logo.png"   style="width:50px; margin:10px; "><strong>Zumosun International Research And Consultancy Pvt Ltd.</strong></h4>
+    <p>Powered by <a href="http://zumosun.com/" target="_blank">Zumosun Group</a></p>
+  </footer>
+
+  <!-- End page content -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+
+function CountRows() {
+        var totalRowCount = 0;
+        var rowCount = 0;
+        var table = document.getElementById("table");
+        var rows = table.getElementsByTagName("tr")
+        for (var i = 0; i < rows.length; i++) {
+            totalRowCount++;
+            if (rows[i].getElementsByTagName("td").length > 0) {
+                rowCount++;
+            }
+        }
+		
+        var message = "Total Row Count: " + totalRowCount;
+        message += "\nRow Count: " + rowCount;
+        alert(message);
+		document.getElementById("myText").innerHTML = totalRowCount;
+		document.getElementById("Text").innerHTML = totalRowCount;
+		document.getElementById("my").innerHTML = totalRowCount;
+		document.getElementById("myt").innerHTML = totalRowCount;
+    }
+
+//Gather the data
+        const form = document.querySelector('form');
+        form.addEventListener('submit', submitForm);
+        function submitForm(e) {
+
+            e.preventDefault();
+            const client_name = document.querySelector('#client_name').value;
+			const invoice_type = document.querySelector('#invoice_type').value;
+			const invoice_number = document.querySelector('#invoice_number').value;
+			const product = document.querySelector('#product').value;
+			const description = document.querySelector('#description').value;
+			const quantity = document.querySelector('#quantity').value;
+            const uom = document.querySelector('#uom').value;
+			const tax = document.querySelector('#tax').value;
+			const po_no = document.querySelector('#po_no').value;
+			const po_date = document.querySelector('#po_date').value;
+			const issue_date = document.querySelector('#issue_date').value;
+			const due_date = document.querySelector('#due_date').value;
+			const payment_terms = document.querySelector('#payment_terms').value;
+			const discount = document.querySelector('#discount').value;
+			const total = document.querySelector('#total').value;
+			const amount_recieved = document.querySelector('#amount_recieved').value;
+			const amount_paid = document.querySelector('#amount_paid').value;
+			const payment_type = document.querySelector('#payment_type').value;
+
+            //console.log(firstName, lastName);
+
+            //Attempt to send to Server MSSQL
+            //Database Details not secure but eh, internal app
+           var mysql = require('mysql');
+
+            // Add the credentials to access your database
+            var connection = mysql.createConnection({
+                host     : 'localhost',
+                user     : 'root',
+                password : null,
+                database : 'gst.mysql'
+            });
+
+
+            // connect to mysql
+            connection.connect(function(err) {
+                // in case of error
+                if(err){
+                    console.log(err.code);
+                    console.log(err.fatal);
+                }
+            });
+
+            var addConn = (async function () {
+
+  $query= 'Insert into create_invoice (client_name, invoice_type, invoice_number, product, description, quantity, uom, tax, po_no, po_date, issue_date, due_date, payment_terms, discount, total, amount_recieved, amount_paid, payment_type) values (' + "'" + client_name + "'" + ',' + "'" + invoice_type + "'" + ',' + "'" + invoice_number + "'" + ',' + "'" + product + "'" + ',' + "'" + description + "'" + ',' + "'" + quantity + "'" + ',' + "'" + uom + "'" + ',' + "'" + tax + "'" + ',' + "'" + po_no + "'" + ',' + "'" + po_date + "'" + ',' + "'" + issue_date + "'" + ',' + "'" + due_date + "'" + ',' + "'" + payment_terms + "'" + ',' + "'" + discount + "'" + ',' + "'" + total + "'" + ',' + "'" + amount_recieved + "'" + ',' + "'" + amount_paid + "'" + ',' + "'" + payment_type + "'" + ')';
+                    //.query('insert into dbo.nirvana (FirstName, LastName, AmountDuePrevious, AmountDueCurrent) values ('+lastName+' , '+firstName+' , 0, 0);');
+  connection.query($query, function(err, fields) {
+                if(err){
+                    console.log("An error ocurred performing the query.");
+                    console.log(err);
+                    return;
+                }
+
+              console.log("Query succesfully executed");
+            });
+
+            });
+
+ addConn();
+
+connection.end(function(){
+                // The connection has been closed
+            });
+			}
+
+
+
+var mysql = require('mysql');
+
+        function el(selector) {
+            return document.getElementById(selector);
+        }
+
+        el('action-btn').addEventListener('click', function(){
+            // Get the mysql service
+            getFirstTenRows(function(rows){
+                var html = '';
+
+                rows.forEach(function(row){
+                    html += '<tr>';
+                    html += '<td>';
+                    html += row.client_name;
+                    html += '</td>';
+					html += '<td>';
+                    html += row.invoice_type;
+                    html += '</td>';
+					 html += '<td>';
+                    html += row.invoice_number;
+                    html += '</td>';
+					 html += '<td>';
+                    html += row.product;
+                    html += '</td>';
+					 html += '<td>';
+                    html += row.description;
+                    html += '</td>';
+					html += '<td>';
+                    html += row.quantity;
+                    html += '</td>';
+					html += '<td>';
+                    html += row.uom;
+                    html += '</td>';
+					html += '<td>';
+                    html += row.tax;
+                    html += '</td>';
+					html += '<td>';
+                    html += row.po_no;
+                    html += '</td>';
+					  html += '<td>';
+                    html += row.po_date;
+                    html += '</td>';
+					html += '<td>';
+                    html += row.issue_date;
+                    html += '</td>';
+					html += '<td>';
+                    html += row.due_date;
+                    html += '</td>';
+					html += '<td>';
+                    html += row.payment_terms;
+                    html += '</td>';
+					html += '<td>';
+                    html += row.discount;
+                    html += '</td>';
+					 html += '<td>';
+                    html += row.total;
+                    html += '</td>';
+					 html += '<td>';
+                    html += row.amount_recieved;
+                    html += '</td>';
+					html += '<td>';
+                    html += row.amount_paid;
+                    html += '</td>';
+					html += '<td>';
+                    html += row.payment_type;
+                    html += '</td>';
+					 html += '<td>';
+					  html += '<input type="button" value="Delete" onclick="deleteRow(this)">';
+					  html += '</td>';
+                    html += '</tr>';
+                    console.log(row);
+                });
+
+                document.querySelector('#table > tbody').innerHTML = html;
+            });
+        },false);
+
+		function deleteRow(r) {
+    var i = r.parentNode.parentNode.rowIndex;
+    document.getElementById("table").deleteRow(i);
+}
+
+        function getFirstTenRows(callback){
+            var mysql = require('mysql');
+
+            // Add the credentials to access your database
+            var connection = mysql.createConnection({
+                host     : 'localhost',
+                user     : 'root',
+                password : null,
+                database : 'gst.mysql'
+            });
+
+            // connect to mysql
+            connection.connect(function(err) {
+                // in case of error
+                if(err){
+                    console.log(err.code);
+                    console.log(err.fatal);
+                }
+            });
+
+            // Perform a query
+            $query = 'SELECT `client_name`,`invoice_type`,`invoice_number`,`product`,`description`,`quantity`,`uom`,`tax`,`po_no`,`po_date`,`issue_date`,`due_date`,`payment_terms`,`discount`,`total`,`amount_recieved`,`amount_paid`,`payment_type`  FROM `create_invoice` ';
+
+            connection.query($query, function(err, rows, fields) {
+                if(err){
+                    console.log("An error ocurred performing the query.");
+                    console.log(err);
+                    return;
+                }
+
+                callback(rows);
+
+                console.log("Query succesfully executed",rows);
+            });
+
+            // Close the connection
+            connection.end(function(){
+                // The connection has been closed
+            });
+        }
+
+
+
+//print
+function myfunction() {
+    window.print();
+}
+
+function downloadCSV(csv, filename) {
+    var csvFile;
+    var downloadLink;
+
+    // CSV file
+    csvFile = new Blob([csv], {type: "text/csv"});
+
+    // Download link
+    downloadLink = document.createElement("a");
+
+    // File name
+    downloadLink.download = filename;
+
+    // Create a link to the file
+    downloadLink.href = window.URL.createObjectURL(csvFile);
+
+    // Hide download link
+    downloadLink.style.display = "none";
+
+    // Add the link to DOM
+    document.body.appendChild(downloadLink);
+
+    // Click download link
+    downloadLink.click();
+}
+function exportTableToCSV(filename) {
+    var csv = [];
+    var rows = document.querySelectorAll("table tr");
+
+    for (var i = 0; i < rows.length; i++) {
+        var row = [], cols = rows[i].querySelectorAll("td, th");
+
+        for (var j = 0; j < cols.length; j++)
+            row.push(cols[j].innerText);
+
+        csv.push(row.join(","));
+    }
+
+    // Download CSV file
+    downloadCSV(csv.join("\n"), filename);
+}
+function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("table");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+
+ $(function () {
+     var csv = $("#fileUploadCSV").val();
+     $("#btnUpload").bind("click", function () {
+        debugger;
+        var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.csv|.txt)$/;//regex for Checking valid files csv of txt
+        if (regex.test($("#fileUploadCSV").val().toLowerCase())) {
+            if (typeof (FileReader) != "undefined") {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                      var rows = e.target.result.split("\r\n");
+
+                      if (rows.length > 0) {
+                           var first_Row_Cells = splitCSVtoCells(rows[0], ","); //Taking Headings
+
+                    if (first_Row_Cells.length != 9 ) {
+                        alert('Please upload a valid csv ,Colums count not matching ');
+                        return;
+                    }
+                    if (first_Row_Cells[0] != "id") {
+                        alert('Please upload a valid csv, Check Heading id');
+                        return;
+                    }
+                    if (first_Row_Cells[1] != "product_name") {
+                        alert('Please upload a valid csv, Check Heading product_name');
+                        return;
+
+}
+                      if (first_Row_Cells[2] != "unit_price") {
+
+alert('Please upload a valid csv, Check heading unit_price');
+                         return;
+                      }
+
+var jsonArray = new Array();
+                      for (var i = 1; i < rows.length; i++) {
+                           var cells = splitCSVtoCells(rows[i], ",");
+
+
+                            var obj = {};
+                            for (var j = 0; j < cells.length; j++) {
+                                 obj[first_Row_Cells[j]] = cells[j];
+                            }
+                            jsonArray.push(obj);
+                       }
+
+console.log(jsonArray);
+                       var html = "";
+                       for (i = 0; i < jsonArray.length; i++) {
+                           debugger;
+                           if (jsonArray[i].id != "") {
+                              html += "<tr id=\"rowitem\"" + i + "><td style=\"display:none;\">" + i + "</td><td> <input type=\"text\" value=\"" + jsonArray[i].id + "\">  </input> </td>";
+                                        html += "<td><input type=\"text\" value= \"" + jsonArray[i].product_name + "\"></input></td>";
+										html += "<td><input type=\"text\" value= \"" + jsonArray[i].unit_price + "\"></input></td>";
+										html += "<td><input type=\"text\" value= \"" + jsonArray[i].qty + "\"></input></td>";
+										html += "<td><input type=\"text\" value= \"" + jsonArray[i].uom + "\"></input></td>";
+										html += "<td><input type=\"text\" value= \"" + jsonArray[i].tax + "\"></input></td>";
+										html += "<td><input type=\"text\" value= \"" + jsonArray[i].description + "\"></input></td>";
+										html += "<td><input type=\"text\" value= \"" + jsonArray[i].type + "\"></input></td>";
+                                        html += "<td><input type=\"text\" value= \"" + jsonArray[i].shn_sac + "\" ></input></td>";
+										 html += '<td><input type="button" value="Delete" onclick="deleteRow(this)"></td></tr>';
+
+
+                                    }
+                                }
+  document.getElementById('tbodyLeads').innerHTML = html;
+
+
+                            }
+                        }
+                        reader.readAsText($("#fileUploadCSV")[0].files[0]);
+                    }
+                    else {
+                        alert("This browser does not support HTML5.");
+                    }
+                } else {
+                    alert("Select a valid CSV File.");
+                }
+            });
+        });
+        function splitCSVtoCells(row, separator) {
+            return row.split(separator);
+        }
+</script>
+
+</body>
+</html>

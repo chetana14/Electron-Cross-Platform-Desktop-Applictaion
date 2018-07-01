@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+<title>My Account</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>window.$ = window.jQuery = require('./jquery-2.1.4.js');</script>
+<style>
+#imageUpload
+{
+    display: none;
+}
+
+#profileImage
+{
+    cursor: pointer;
+}
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif; font-weight:bold;}
+.jumbotron{
+    position: relative;
+    padding:0 !important;
+    margin-top:70px !important;
+    background: #eee;
+    margin-top: 23px;
+    text-align:center;
+    margin-bottom: 0 !important;
+	margin-left:15px;
+	margin-right:15px;
+	
+
+}
+.container-fluid{
+    padding:0 !important;
+	background:rgba(255, 0, 0, 0.6);
+}
+.vertical-menu {
+    width: 800px;
+    height: 1000px;
+    overflow-y: auto;
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+}
+
+.tit {
+    color: grey;
+    font-size: 18px;
+}
+button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+
+
+button:hover, a:hover {
+    opacity: 0.7;
+}
+</style>
+<body class="w3-light-grey">
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+
+<button class="w3-bar-item w3-button  w3-hover-none w3-hover-text-white" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+
+<span class="w3-bar-item w3-right" style="text-color:rgba(0,255,255,0)">GST Billing Software</span>
+</div>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+<div class="vertical-menu">
+  <div class="w3-container w3-row">
+    <div class="w3-col s4">
+      <img src="C:\Gst_Billing\images\client.png" class="w3-circle w3-margin-right" style="width:46px" id="profileImage">
+	  <input type="file" id="imageUpload" class="form-control">
+	  <h4 align="left">Welcome, <strong>Mike</strong></h4><br>
+    </div>
+  </div>
+  <hr>
+  <div class="w3-container">
+    <h5>Dashboard</h5>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
+    <a href="index.html" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-bars fa-fw"></i>  Overview</a>
+    <a href="overview.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>Invoice</a>
+
+	<a href="product.html" class="w3-bar-item w3-button "><i class="fa fa-product-hunt fa-fw"></i>Product<span class="fa arrow"></span></a>
+	<ul class="nav nav-second-level">
+	
+                                    <li>
+                                        <a href="view_product.html">View</a>
+                                    </li>
+	</ul>
+
+	<a href="client.html" class="w3-bar-item w3-button "><i class="fa fa-users fa-fw"></i>Client<span class="fa arrow"></span></a>
+	<ul class="nav nav-second-level">
+	<li>
+                                        <a href="add_client.html">Add New</a>
+                                    </li>
+                                    <li>
+                                        <a href="view_client.html">View</a>
+                                    </li>
+	</ul>
+    <a href="bill.html" class="w3-bar-item w3-button "><i class="fa fa-credit-card fa-fw"></i> Bill<span class="fa arrow"></span></a>
+	<ul class="nav nav-second-level">
+	<li>
+                                        <a href="client_bill.html">Client Bill</a>
+                                    </li>
+                                    <li>
+                                        <a href="supplier_bill.html">Supplier Bill</a>
+                                    </li>
+	</ul>
+    <a href="stock.html" class="w3-bar-item w3-button "><i class="fa fa-archive fa-fw"></i>Stock Management</a>
+    <a href="print.html" class="w3-bar-item w3-button "><i class="fa fa-print fa-fw"></i>Print</a>
+<a href="settings.html" class="w3-bar-item w3-button "><i class="fa fa-cog fa-fw"></i>Settings</a>
+  </div>
+</div>
+  </nav>
+
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px;margin-top:43px;overflow-x: scroll;">
+
+  <!-- Header -->
+  <header class="w3-container" style="padding-top:22px">
+    <h5><b><i class="fa fa-dashboard"></i> My Dashboard</b></h5>
+  </header>
+
+  <div class="w3-row-padding w3-margin-bottom">
+    <div class="w3-quarter">
+      <div class="w3-container w3-red w3-padding-16">
+        <div class="w3-left"><i class="fa fa-credit-card w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3></h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Bill</h4>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-blue w3-padding-16">
+        <div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3></h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Maintain</h4>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-teal w3-padding-16">
+        <div class="w3-left"><i class="fa fa-shopping-cart w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3></h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Purchases</h4>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-orange w3-text-white w3-padding-16">
+        <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3></h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Sales</h4>
+      </div>
+    </div>
+  </div>
+ 
+ <hr>
+ <h2 align="left"><strong>Personal Details</strong></h2>
+ <div class="container">
+    
+  	<hr>
+	<div class="col-md-9 personal-info">
+        <div class="alert alert-info alert-dismissable">
+		<div class="row">
+      <!-- left column -->
+      <div class="col-md-3">
+        <div class="text-center">
+          <img src="C:\Gst_Billing\images\client.png" class="avatar img-circle" alt="avatar" id="profile">
+          <h6>Upload a different photo...</h6>
+          <input type="file" id="image" class="form-control">
+        </div>
+	</div>
+      <div class="w3-third" style="margin:20px;">
+<div class="card">
+  <h3><span id='display'></span></h3>
+  <p class="tit">CEO & Founder</p>
+  <label><p class="tit">Company: <span id='disp'></span></p></label>
+  <input type="submit" onclick="showInput();"><br/>
+  </div>
+  </div>
+     
+      <!-- edit form column -->
+      </div>
+		 <a class="panel-close close" data-dismiss="alert">×</a> 
+          </div>
+        
+        
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label class="col-lg-3 control-label">First name:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="Jane" id="first">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Last name:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="Bishop" id="last">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Company:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="" id="company">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Username:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="text" value="janeuser" id="user">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Password:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="password" value="11111122333" >
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Confirm password:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="password" value="11111122333">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <input type="button" class="btn btn-primary" value="Save Changes">
+              <span></span>
+              <input type="reset" class="btn btn-default" value="Cancel">
+            </div>
+          </div>
+		 
+</div>
+        </form>
+      </div>
+	
+  
+ 
+ <hr>
+ <h2 align="left"><strong>Business Details</strong></h2>
+ <div class="container">
+    
+  	<hr>
+	<div class="row">
+      <!-- left column -->
+      
+      
+      <!-- edit form column -->
+      <div class="col-md-9 personal-info">
+        
+        <div class="alert alert-info alert-dismissable">
+		<!-- left column -->
+      <div class="card" style="width:1000px;">
+  <h3><span id='play'></span></h3>
+  <label><p class="tit">Address: <span id='dis'></span></p></label>
+  <input type="submit" onclick="showInput();"><br/>
+  </div>
+   <a class="panel-close close" data-dismiss="alert">×</a> 
+          </div>
+		
+		
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Company name:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" id="name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Address:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" id="address">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">City:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">State:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" >
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Country:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" >
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Pincode:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <input type="button" class="btn btn-primary" value="Save Changes">
+              <span></span>
+              <input type="reset" class="btn btn-default" value="Cancel">
+            </div>
+          </div>
+        </form>
+      </div>
+  </div>
+</div>
+ 
+ 
+ <br><hr>
+ <h2 align="left"><strong>Taxes</strong></h2>
+ <div class="container">
+    
+  	<hr>
+	<div class="row">
+      <!-- left column -->
+      
+      
+      <!-- edit form column -->
+      <div class="col-md-9 personal-info">
+        
+		  
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Taxation Type:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" >
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Service Tax No:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">GSTIN:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">VAT:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">PAN:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">CGST:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Tax Name:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="text" id="tax">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Tax Percentage:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="text" id="percent">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <input type="button" class="btn btn-primary" value="Save Changes">
+              <span></span>
+              <input type="reset" class="btn btn-default" value="Cancel">
+            </div>
+          </div>
+        </form>
+      </div>
+  </div>
+</div>
+ 
+ 
+ <form class="modal-content animate">
+ <div class="container">
+    <div class="row">
+    	<div class="col-md-12">
+    		<div class="panel panel-default">
+    			<div class="panel-heading">
+    				<h3 class="panel-title"><strong>Tax summary</strong></h3>
+    			</div>
+    			<div class="panel-body">
+    				<div class="table-responsive">
+    					<table class="table table-condensed" id="table">
+    						<thead>
+                                
+    						</thead>
+    						<tbody>
+    							<!-- foreach ($order->lineItems as $line) or some such thing here -->
+    							
+    						</tbody>
+    					</table>
+    				</div>
+    			</div>
+    		</div>
+    	</div> 
+    </div>
+	
+	<button type="button" onclick="myFunction()" class="cancelbtn" >Add</button>&nbsp;
+	
+
+</div>
+</form>
+ 
+ <hr>
+ <footer class="w3-container w3-padding-16 w3-light-grey">
+    <h4><img src="C:\Gst_Billing\images\logo.png"   style="width:50px; margin:10px; "><strong>Zumosun International Research And Consultancy Pvt Ltd.</strong></h4>
+    <p>Powered by <a href="http://zumosun.com/" target="_blank">Zumosun Group</a></p>
+  </footer>
+</div>
+  <!-- Footer -->
+  
+
+  <!-- End page content -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+function myFunction() {
+    var table = document.getElementById("table");
+    var row = table.insertRow(0);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    cell1.innerHTML = "Tax Name";
+    cell2.innerHTML = "Tax Percentage";
+	
+}
+
+function showInput() {
+        document.getElementById('display').innerHTML = 
+                    document.getElementById("first").value + '&nbsp' + document.getElementById("last").value;
+	     document.getElementById('disp').innerHTML = 
+                    document.getElementById("company").value;
+		document.getElementById('play').innerHTML = 
+                    document.getElementById("name").value;
+		document.getElementById('dis').innerHTML = 
+                    document.getElementById("address").value;							
+    }
+
+$("#profileImage").click(function(e) {
+    $("#imageUpload").click();
+});
+
+function fasterPreview( uploader ) {
+    if ( uploader.files && uploader.files[0] ){
+          $('#profileImage').attr('src', 
+             window.URL.createObjectURL(uploader.files[0]) );
+    }
+}
+
+$("#imageUpload").change(function(){
+    fasterPreview( this );
+});
+
+
+$("#profile").click(function(e) {
+    $("#image").click();
+});
+
+function Preview( uploader ) {
+    if ( uploader.files && uploader.files[0] ){
+          $('#profile').attr('src', 
+             window.URL.createObjectURL(uploader.files[0]) );
+    }
+}
+
+$("#image").change(function(){
+    Preview( this );
+});
+
+var mysql = require('mysql');
+
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: null
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+});
+
+</script>
+
+</body>
+</html>

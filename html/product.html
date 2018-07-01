@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<title>My Account</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif; font-weight:bold;}
+.jumbotron{
+    position: relative;
+    padding:0 !important;
+   
+    background: #eee;
+    margin-top: 23px;
+    text-align:center;
+    margin-bottom: 0 !important;
+	margin-left:15px;
+	margin-right:15px;
+	width:500px;
+
+}
+.container-fluid{
+    padding:0 !important;
+	background:rgba(255, 0, 0, 0.6);
+}
+.vertical-menu {
+    width: 800px;
+    height: 1000px;
+    overflow-y: auto;
+}
+</style>
+<body class="w3-light-grey">
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+
+<button class="w3-bar-item w3-button  w3-hover-none w3-hover-text-white" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+
+<span class="w3-bar-item w3-right" style="text-color:rgba(0,255,255,0)">GST Billing Software</span>
+</div>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+<div class="vertical-menu">
+  <div class="w3-container w3-row">
+    <div class="w3-col s4">
+      <img src="C:\Gst_Billing\images\client.png" class="w3-circle w3-margin-right" style="width:46px">
+	  <h4 align="left">Welcome, <strong>Mike</strong></h4><br>
+    </div>
+  </div>
+  <hr>
+  <div class="w3-container">
+    <h5>Dashboard</h5>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
+    <a href="index.html" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-bars fa-fw"></i>  Overview</a>
+    <a href="overview.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>Invoice</a>
+
+	<a href="product.html" class="w3-bar-item w3-button "><i class="fa fa-product-hunt fa-fw"></i>Product<span class="fa arrow"></span></a>
+	<ul class="nav nav-second-level">
+	
+                                    <li>
+                                        <a href="view_product.html">View</a>
+                                    </li>
+	</ul>
+
+	<a href="client.html" class="w3-bar-item w3-button "><i class="fa fa-users fa-fw"></i>Client<span class="fa arrow"></span></a>
+	<ul class="nav nav-second-level">
+	<li>
+                                        <a href="add_client.html">Add New</a>
+                                    </li>
+                                    <li>
+                                        <a href="view_client.html">View</a>
+                                    </li>
+	</ul>
+    <a href="bill.html" class="w3-bar-item w3-button "><i class="fa fa-credit-card fa-fw"></i> Bill<span class="fa arrow"></span></a>
+	<ul class="nav nav-second-level">
+	<li>
+                                        <a href="client_bill.html">Client Bill</a>
+                                    </li>
+                                    <li>
+                                        <a href="supplier_bill.html">Supplier Bill</a>
+                                    </li>
+	</ul>
+    <a href="stock.html" class="w3-bar-item w3-button "><i class="fa fa-archive fa-fw"></i>Stock Management</a>
+    <a href="print.html" class="w3-bar-item w3-button "><i class="fa fa-print fa-fw"></i>Print</a>
+<a href="settings.html" class="w3-bar-item w3-button "><i class="fa fa-cog fa-fw"></i>Settings</a>
+  </div>
+</div>
+  </nav>
+
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px;margin-top:43px;overflow-x: scroll;">
+
+  <!-- Header -->
+  <header class="w3-container" style="padding-top:22px">
+    <h5><b><i class="fa fa-dashboard"></i> My Dashboard</b></h5>
+  </header>
+
+  <div class="w3-row-padding w3-margin-bottom">
+    <div class="w3-quarter">
+      <div class="w3-container w3-red w3-padding-16">
+        <div class="w3-left"><i class="fa fa-credit-card w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3></h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Bill</h4>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-blue w3-padding-16">
+        <div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3></h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Maintain</h4>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-teal w3-padding-16">
+        <div class="w3-left"><i class="fa fa-shopping-cart w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3></h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Purchases</h4>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-orange w3-text-white w3-padding-16">
+        <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3></h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Sales</h4>
+      </div>
+    </div>
+  </div>
+
+<img src="C:\Gst_Billing\images\pr.jpg" class="" style="" align="right" width="500px">
+ <div class="jumbotron">
+<h2 align="left"><strong>Add Or Manage Products</strong></h2>
+<div class="container-fluid">
+
+
+
+
+    <h3 style="color:#FFF" align="left">
+	  <ul type="square">
+	 <li> Add and manage products and their payment.</li><br>
+	 <li>Export/Import your client list in multiple file formats like .pdf, .csv etc. </li><br>
+	 <li>Delete from existing database or add new products.</li><br>
+	 <li>Manage remaining products in stock by stock management.</li><br>
+	 <li>View product bills(both client and supplier bills).</li>
+	</ul>
+</h3>
+
+
+  </div>
+ </div><hr>
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-16 w3-light-grey">
+    <h4><img src="C:\Gst_Billing\images\logo.png"   style="width:50px; margin:10px; "><strong>Zumosun International Research And Consultancy Pvt Ltd.</strong></h4>
+    <p>Powered by <a href="http://zumosun.com/" target="_blank">Zumosun Group</a></p>
+  </footer>
+
+  <!-- End page content -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+</script>
+
+</body>
+</html>

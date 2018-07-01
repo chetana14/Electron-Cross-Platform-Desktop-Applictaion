@@ -1,0 +1,24 @@
+{
+  "name": "gst_billing",
+  "version": "1.0.0",
+  "description": "gst billing desktop app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Chetana Singhal",
+  "license": "MIT",
+  "dependencies": {
+    "datatables.net": "^1.10.16",
+    "datatables.net-buttons": "^1.5.1",
+    "ejs": "^2.6.1",
+    "electron": "^2.0.2",
+    "express": "^4.16.3",
+    "mysql": "^2.15.0",
+    "php": "0.0.1",
+    "tableexport": "^5.0.2"
+  },
+  "devDependencies": {
+    "gulp-connect-php": "^1.0.3"
+  }
+}

@@ -1,3 +1,5 @@
 /**
-npm packages are required to run electron applications
+npm packages are required to run electron applications..
+All packages are not shown here..
+Install node packages by using commmand : npm install package_name
 **/

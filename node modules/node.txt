@@ -1,0 +1,3 @@
+/**
+npm packages are required to run electron applications
+**/
